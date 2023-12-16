@@ -1,4 +1,4 @@
-// components/FullBackgroundImage.tsx
+'use client';
 import React from 'react';
 
 interface FullBackgroundImageProps {

@@ -4,6 +4,7 @@ export interface QuranVerseData {
   translate: string; // translated text
   translate_language: TranslateLanguage// ISO 639-1
   translate_edition: string; // edition of the translated
+  surah_name: string;
   surah_number: string;
   ayat_number: string;
 

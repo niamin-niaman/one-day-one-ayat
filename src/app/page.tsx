@@ -1,5 +1,9 @@
+'use client';
 import FullBackgroundImage from "@/components/FullBackgroundImage";
 import QuranVerse from "@/components/QuranVerse";
+import useImage from "@/hooks/useImage";
+import useQuranVerse from "@/hooks/useQuranVerse";
+import { useEffect } from "react";
 
 export default function Home() {
 
@@ -8,19 +12,46 @@ export default function Home() {
 
   // const arabicText = "اللَّهُ لَا إِلَٰهَ إِلَّا هُوَ الْحَيُّ الْقَيُّومُ ۚ لَا تَأْخُذُهُ سِنَةٌ وَلَا نَوْمٌ ۚ لَهُ مَا فِي السَّمَاوَاتِ وَمَا فِي الْأَرْضِ ۗ مَنْ ذَا الَّذِي يَشْفَعُ عِنْدَهُ إِلَّا بِإِذْنِهِ ۚ يَعْلَمُ مَا بَيْنَ أَيْدِيهِمْ وَمَا خَلْفَهُمْ ۖ وَلَا يُحِيطُونَ بِشَيْءٍ مِنْ عِلْمِهِ إِلَّا بِمَا شَاءَ ۚ وَسِعَ كُرْسِيُّهُ السَّمَاوَاتِ وَالْأَرْضَ ۖ وَلَا يَئُودُهُ حِفْظُهُمَا ۚ وَهُوَ الْعَلِيُّ الْعَظِيمُ"
   const arabicText = "الله أكبر"
+  const translationText = "Allahu Akbar (Allah is the Greatest)"
+
+  const { quranVerseData, loading : quranLoding, fetchQuranVerse } = useQuranVerse();
+  const { image, loading: imageLoading, fetchImage } = useImage();
+
+  if(!imageLoading){
+    console.log(image);
+    
+  }
+
+  const handleFetchQuranVerse = async () => {
+    fetchQuranVerse()
+    fetchImage()
+  }
+
+  useEffect(() => {
+    fetchQuranVerse()
+    fetchImage()
+  }, [])
+
 
   return (
     <main>
-      <FullBackgroundImage imageUrl={imageUrl}  >
+      <FullBackgroundImage imageUrl={image?.urls?.regular ?? ""}  >
         <div className="flex items-center justify-center h-screen">
           <div className="max-w-md backdrop-blur-sm p-3 rounded-lg">
             <QuranVerse
-              arabicText={arabicText}
-              translationText="Allahu Akbar (Allah is the Greatest)"
-              reference="Quran 2:255"
+              arabicText={quranVerseData?.original ?? ""}
+              translationText={quranVerseData?.translate ?? ""}
+              reference={`${quranVerseData?.surah_name} ${quranVerseData?.surah_number}:${quranVerseData?.ayat_number}`}
             />
           </div>
         </div>
+
+        <div className="fixed bottom-0 left-0 right-0 p-4 mb-8  flex justify-center text-white">
+          <button onClick={handleFetchQuranVerse} className="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded">
+            give me a ayat
+          </button>
+        </div>
+
       </FullBackgroundImage>
     </main>
   )
