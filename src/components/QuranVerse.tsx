@@ -1,6 +1,6 @@
 'use client';
 import React from 'react';
-import { Noto_Sans_Arabic , Amiri_Quran , Amiri , Lateef , Merriweather , Noto_Sans_Thai , Mali} from 'next/font/google';
+import { Noto_Sans_Arabic, Amiri_Quran, Amiri, Lateef, Merriweather, Noto_Sans_Thai, Mali } from 'next/font/google';
 
 interface QuranVerseProps {
     arabicText: string;
@@ -53,7 +53,7 @@ const QuranVerse: React.FC<QuranVerseProps> = ({ arabicText, translationText, re
 
             {/* Second line: Translation Text */}
             <div className={`text-lg text-white ${merriweather.className} ${mali.className}`}>
-               " {translationText} "
+                &quot;{translationText}&quot;
             </div>
 
             {/* Third line: Reference */}
