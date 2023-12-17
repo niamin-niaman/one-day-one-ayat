@@ -36,10 +36,6 @@ const useImage = (): UseImageHook => {
             }
 
             const result: ImageData = await response.json();
-
-            console.log('image result');
-            console.log(result);
-            
             
             setImage(result);
             setLoading(false);

@@ -15,6 +15,7 @@ const useQuranVerse = (language: TranslateLanguage = TranslateLanguage.Thai) => 
             break;
 
         default:
+            queryLanguage = 'th.thai'
             break;
     }
 
