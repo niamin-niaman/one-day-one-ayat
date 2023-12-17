@@ -6,6 +6,12 @@ interface ImageData {
     urls: {
         regular: string;
     };
+    user: {
+        links: {
+            html: string;
+        }
+        name: string;
+    }
 }
 
 interface UseImageHook {
@@ -36,7 +42,7 @@ const useImage = (): UseImageHook => {
             }
 
             const result: ImageData = await response.json();
-            
+
             setImage(result);
             setLoading(false);
         } catch (error) {
