@@ -26,7 +26,7 @@ export default function Home() {
 
   return (
     <main>
-      <FullBackgroundImage imageUrl={image?.urls?.regular ?? ""}  >
+      <FullBackgroundImage imageUrl={image?.urls?.regular ?? "https://fastly.picsum.photos/id/13/2500/1667.jpg?hmac=SoX9UoHhN8HyklRA4A3vcCWJMVtiBXUg0W4ljWTor7s"}  >
         <div className="flex items-center justify-center h-screen">
           <div className="md:max-w-[70%] backdrop-blur-lg backdrop-brightness-50 p-4 rounded-lg">
             {quranLoding ?
