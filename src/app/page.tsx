@@ -49,7 +49,7 @@ export default function Home() {
           </button>
         </div>
         <div className="fixed bottom-0 right-0  flex justify-center px-1 text-white backdrop-blur-lg backdrop-brightness-50">
-          <p>Photo by</p> <a href={`${image?.user?.links?.html}?utm_source=one_day_one_ayat&utm_medium=referral`}> {image?.user?.name} </a> <p> on </p> <a href="https://unsplash.com/?utm_source=one_day_one_ayat&utm_medium=referral">Unsplash</a>
+          <p>Photo by</p> <a href={`${image?.user?.links?.html}?utm_source=one_day_one_ayat&utm_medium=referral`}> {image?.user?.name} </a> <p>&nbsp;on&nbsp;</p> <a href="https://unsplash.com/?utm_source=one_day_one_ayat&utm_medium=referral">Unsplash</a>
         </div>
 
       </FullBackgroundImage>
