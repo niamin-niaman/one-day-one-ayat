@@ -47,7 +47,7 @@ const QuranVerse: React.FC<QuranVerseProps> = ({ arabicText, translationText, re
     return (
         <div className="text-center">
             {/* First line: Arabic Font */}
-            <div className={`font-arabic text-xl leading-loose text-white mb-2 ${lateef.className} text-2xl`}>
+            <div className={`font-arabic text-xl leading-loose text-white mb-2 ${lateef.className} text-3xl`}>
                 {arabicText}
             </div>
 
