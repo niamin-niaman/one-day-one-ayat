@@ -45,7 +45,7 @@ export default function Home() {
 
         <div className="fixed bottom-0 left-0 right-0 p-4 mb-8  flex justify-center text-white">
           <button onClick={handleFetchQuranVerse} className="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded">
-            Give me a ayat
+            Give me one ayat
           </button>
         </div>
         <div className="fixed bottom-0 right-0  flex justify-center px-1 text-white backdrop-blur-lg backdrop-brightness-50">
